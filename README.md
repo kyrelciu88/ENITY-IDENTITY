@@ -1,6 +1,6 @@
 # FIVEM ENITY–IDENTITY
 
-SUPPORT:
+DISCORD:
 discord.gg/enity
 
 
