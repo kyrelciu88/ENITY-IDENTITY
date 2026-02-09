@@ -28,9 +28,10 @@ Edytuj plik `config.lua` aby dostosować:
 - Dostępne narodowości
 
 ## PREVIEW
-![enity](https://imgur.com/KrysT8d)
-![enity](https://imgur.com/L4t5Kk7)
-![enity](https://imgur.com/OGLdzqC)
+![enity](https://i.imgur.com/KrysT8d.png)
+![enity](https://i.imgur.com/L4t5Kk7.png)
+![enity](https://i.imgur.com/OGLdzqC.png)
+
 
 
 ## Autor
