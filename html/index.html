@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enity Identity</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+</head>
+<body>
+    <div class="enity-container" id="container">
+
+        <div class="enity-karta">
+            <div class="enity-naglowek">
+                <div class="enity-logo-container">
+                    <div class="enity-logo">
+                        <span class="material-symbols-rounded">fingerprint</span>
+                    </div>
+                    <div class="enity-logo-tekst">
+                        <h1>ENITY</h1>
+                        <span class="enity-podtytul">Stwórz swoją postać</span>
+                    </div>
+                </div>
+                <div class="enity-kroki">
+                    <div class="enity-krok aktywny" data-step="1">
+                        <span class="enity-krok-numer">1</span>
+                        <span class="enity-krok-etykieta">Dane osobowe</span>
+                    </div>
+                    <div class="enity-krok-linia"></div>
+                    <div class="enity-krok" data-step="2">
+                        <span class="enity-krok-numer">2</span>
+                        <span class="enity-krok-etykieta">Szczegóły</span>
+                    </div>
+                    <div class="enity-krok-linia"></div>
+                    <div class="enity-krok" data-step="3">
+                        <span class="enity-krok-numer">3</span>
+                        <span class="enity-krok-etykieta">Potwierdzenie</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enity-zawartosc">
+                <div class="enity-blad" id="errorMessage">
+                    <span class="material-symbols-rounded">error</span>
+                    <span class="enity-blad-tekst"></span>
+                </div>
+
+                <form id="identityForm">
+                    <div class="enity-formularz-krok aktywny" data-step="1">
+                        <div class="enity-sekcja-tytul">
+                            <span class="material-symbols-rounded">person</span>
+                            <h2>Dane osobowe</h2>
+                        </div>
+                        
+                        <div class="enity-formularz-wiersz">
+                            <div class="enity-formularz-grupa">
+                                <label for="firstname">
+                                    <span class="material-symbols-rounded">badge</span>
+                                    Imię
+                                </label>
+                                <input type="text" id="firstname" name="firstname" placeholder="Wprowadź imię postaci..." required>
+                                <span class="enity-podpowiedz">Min. 2 znaki, max. 20 znaków</span>
+                            </div>
+                            <div class="enity-formularz-grupa">
+                                <label for="lastname">
+                                    <span class="material-symbols-rounded">family_restroom</span>
+                                    Nazwisko
+                                </label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Wprowadź nazwisko postaci..." required>
+                                <span class="enity-podpowiedz">Min. 2 znaki, max. 20 znaków</span>
+                            </div>
+                        </div>
+
+                        <div class="enity-formularz-grupa">
+                            <label>
+                                <span class="material-symbols-rounded">wc</span>
+                                Wybierz płeć
+                            </label>
+                            <div class="enity-plec-wybor">
+                                <div class="enity-plec-opcja" data-value="m">
+                                    <div class="enity-plec-ikona mezczyzna">
+                                        <span class="material-symbols-rounded">male</span>
+                                    </div>
+                                    <span class="enity-plec-etykieta">Mężczyzna</span>
+                                </div>
+                                <div class="enity-plec-opcja" data-value="f">
+                                    <div class="enity-plec-ikona kobieta">
+                                        <span class="material-symbols-rounded">female</span>
+                                    </div>
+                                    <span class="enity-plec-etykieta">Kobieta</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="sex" name="sex" required>
+                        </div>
+                    </div>
+
+                    <div class="enity-formularz-krok" data-step="2">
+                        <div class="enity-sekcja-tytul">
+                            <span class="material-symbols-rounded">info</span>
+                            <h2>Dodatkowe informacje</h2>
+                        </div>
+
+                        <div class="enity-formularz-wiersz">
+                            <div class="enity-formularz-grupa">
+                                <label for="dateofbirth">
+                                    <span class="material-symbols-rounded">calendar_month</span>
+                                    Data urodzenia POSTACI
+                                </label>
+                                <input type="date" id="dateofbirth" name="dateofbirth" required>
+                                <span class="enity-podpowiedz">Wiek: 18-80 lat</span>
+                            </div>
+                            <div class="enity-formularz-grupa" id="heightGroup">
+                                <label for="height">
+                                    <span class="material-symbols-rounded">height</span>
+                                    Wzrost (cm)
+                                </label>
+                                <div class="enity-suwak-container">
+                                    <input type="range" id="height" name="height" min="150" max="210" value="175">
+                                    <span class="enity-suwak-wartosc" id="heightValue">175 cm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="enity-formularz-wiersz">
+                            <div class="enity-formularz-grupa" id="nationalityGroup">
+                                <label for="nationality">
+                                    <span class="material-symbols-rounded">flag</span>
+                                    Narodowość
+                                </label>
+                                <div class="enity-lista-wyboru" id="nationalitySelect">
+                                    <div class="enity-lista-przycisk">
+                                        <span class="enity-lista-wartosc">Wybierz narodowość...</span>
+                                        <span class="material-symbols-rounded enity-strzalka">expand_more</span>
+                                    </div>
+                                    <div class="enity-lista-opcje" id="nationalityOptions"></div>
+                                </div>
+                                <input type="hidden" id="nationality" name="nationality">
+                            </div>
+                            <div class="enity-formularz-grupa" id="birthplaceGroup">
+                                <label for="birthplace">
+                                    <span class="material-symbols-rounded">location_city</span>
+                                    Miejsce urodzenia
+                                </label>
+                                <input type="text" id="birthplace" name="birthplace" placeholder="Np. Los Santos">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enity-formularz-krok" data-step="3">
+                        <div class="enity-sekcja-tytul">
+                            <span class="material-symbols-rounded">verified</span>
+                            <h2>Podsumowanie</h2>
+                        </div>
+
+                        <div class="enity-podsumowanie-karta">
+                            <div class="enity-podsumowanie-awatar" id="summaryAvatar">
+                                <span class="material-symbols-rounded">person</span>
+                            </div>
+                            <div class="enity-podsumowanie-szczegoly">
+                                <div class="enity-podsumowanie-imie" id="summaryName">-</div>
+                                <div class="enity-podsumowanie-info">
+                                    <div class="enity-info-element">
+                                        <span class="material-symbols-rounded">cake</span>
+                                        <span id="summaryBirth">-</span>
+                                    </div>
+                                    <div class="enity-info-element">
+                                        <span class="material-symbols-rounded">straighten</span>
+                                        <span id="summaryHeight">-</span>
+                                    </div>
+                                    <div class="enity-info-element">
+                                        <span class="material-symbols-rounded">public</span>
+                                        <span id="summaryNationality">-</span>
+                                    </div>
+                                    <div class="enity-info-element">
+                                        <span class="material-symbols-rounded">home</span>
+                                        <span id="summaryBirthplace">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="enity-ostrzezenie">
+                            <span class="material-symbols-rounded">warning</span>
+                            <p>Upewnij się, że wszystkie dane są poprawne. Po zatwierdzeniu nie będziesz mógł ich zmienić bez kontaktu z administracją.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="enity-stopka">
+                <button type="button" class="enity-przycisk enity-przycisk-drugi" id="btnPrev" disabled>
+                    <span class="material-symbols-rounded">arrow_back</span>
+                    Wstecz
+                </button>
+                <button type="button" class="enity-przycisk enity-przycisk-glowny" id="btnNext">
+                    Dalej
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                </button>
+                <button type="button" class="enity-przycisk enity-przycisk-sukces" id="btnSubmit" style="display: none;">
+                    <span class="material-symbols-rounded">check_circle</span>
+                    Zatwierdź
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
