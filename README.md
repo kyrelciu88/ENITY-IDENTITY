@@ -27,6 +27,12 @@ Edytuj plik `config.lua` aby dostosować:
 - Zakres wzrostu
 - Dostępne narodowości
 
+## PREVIEW
+![enity](https://imgur.com/KrysT8d)
+![enity](https://imgur.com/L4t5Kk7)
+![enity](https://imgur.com/OGLdzqC)
+
+
 ## Autor
 
 FiveM ENITY
